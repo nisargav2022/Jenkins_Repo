@@ -1,13 +1,13 @@
 pipeline {
           agent any
-environment {
-         PATH = "$PATH:/usr/share/maven/bin"
-    }
+          tools {
+                  maven "maven"
+                }
                 stages{
                         stage('check-out') {
                         steps {
                                 echo 'git'
-                                git branch: 'main', url: 'https://github.com/akshu20791/DevOpsClassCodes.git'
+                                git 'https://github.com/edureka27/webapp.git'
                                }
                                             }
                         stage('compile') {

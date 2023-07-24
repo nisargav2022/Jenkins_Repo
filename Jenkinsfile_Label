@@ -4,6 +4,12 @@ pipeline {
   }
   agent {label 'node2'}
   stages{
+    stage('checkout'){
+    steps{
+      echo "checkout"
+      git branch: 'main', url: 'https://github.com/edureka27/webapp.git'
+          }
+          }
           stage('compile'){
             steps{
               echo "compiling"

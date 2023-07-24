@@ -12,7 +12,7 @@ pipeline{
           }
           }
     stage('compile'){
-      agent any
+      agent {label 'node2'}
       steps{
         echo "compiling"
         sh '''

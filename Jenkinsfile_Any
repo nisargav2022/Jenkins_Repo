@@ -10,7 +10,7 @@ pipeline {
                         stage('compile') {
                         steps {
                                 echo 'compiling'
-                                mvn compile
+                                echo "Hi"
                                }
                                           }
                         stage('test') {

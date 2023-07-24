@@ -13,12 +13,12 @@ pipeline{
           }
     stage('compile')
           {
-      agent { label 'node2' }
+      agent {label 'node2'}
             steps
                   {
                       echo "compiling"
                         sh '''
-                          mvn compile
+                         echo "Hi"
                         '''
                   }
             }

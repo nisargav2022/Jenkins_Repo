@@ -19,7 +19,9 @@ environment {
                         stage('test') {
                         steps {
                                echo 'testing'
-                                mvn test
+                               sh '''
+                                        mvn test
+                                 '''
                                }
                                        }
                         stage('deploy') {

@@ -11,17 +11,19 @@ pipeline{
       git branch: 'main', url: 'https://github.com/edureka27/webapp.git'
           }
           }
-    stage('compile'){
-      agent {label 'node2'}
-      steps{
-        echo "compiling"
-        sh '''
-        mvn compile
-        '''
-      }
-    }
+    stage('compile')
+          {
+      agent { label 'node2' }
+            steps
+                  {
+                      echo "compiling"
+                        sh '''
+                          mvn compile
+                        '''
+                  }
+            }
     stage('test'){
-      agent {label 'node2'}
+      agent { label 'node2' }
       steps{
         echo "testing"
         sh '''
@@ -30,7 +32,7 @@ pipeline{
       }
     }
     stage('deploy'){
-      agent {label 'node2'}
+      agent { label 'node2' }
       steps{
         echo "deploying"
         sh '''

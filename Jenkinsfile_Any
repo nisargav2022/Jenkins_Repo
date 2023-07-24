@@ -7,7 +7,7 @@ pipeline {
                         stage('check-out') {
                         steps {
                                 echo 'git'
-                                git branch: 'main', url: 'https://github.com/edureka27/webapp.git'
+                                git branch: 'main', url: 'https://github.com/Lucky-9113/Java.git'
                                }
                                             }
                         stage('compile') {

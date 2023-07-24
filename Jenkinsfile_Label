@@ -1,0 +1,33 @@
+pipeline {
+  tools{
+    maven "maven"
+  }
+  agent {label 'node2'}
+  stages{
+          stage('compile'){
+            steps{
+              echo "compiling"
+              sh '''
+              mvn compile
+              '''
+            }
+          }
+          stage('Test'){
+            steps{
+              echo "testing"
+              sh '''
+              mvn test
+              '''
+            }
+          }
+          stage('Deploy'){
+            steps{
+              echo "deploying"
+              sh '''
+              mvn install
+              '''
+            }
+          }
+    
+            
+            

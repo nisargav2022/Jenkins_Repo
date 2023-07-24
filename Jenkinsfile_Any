@@ -1,0 +1,33 @@
+pipeline {
+          agent any
+          tools {
+                  mvn "maven"
+                }
+                stages{
+                        stage('check-out') {
+                        steps {
+                                echo 'git'
+                                git 'https://github.com/edureka27/webapp.git'
+                               }
+                                            }
+                        stage('compile') {
+                        steps {
+                                echo 'compiling'
+                                mvn compile
+                               }
+                                          }
+                        stage('test') {
+                        steps {
+                               echo 'testing'
+                                mvn test
+                               }
+                                       }
+                        stage('deploy') {
+                        steps {
+                               echo 'deploying'
+                              mvn install
+                               }
+                                        }
+                      }
+}
+      
